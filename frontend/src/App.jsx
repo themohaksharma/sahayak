@@ -18,6 +18,7 @@ const copy = {
     phase: "आवाज़ की जाँच",
     phaseDetail: "अपनी ज़रूरत बोलें, फिर खेती के बारे में छह तक सवालों के जवाब दें। योजना की अंतिम पुष्टि सरकारी विभाग या बैंक करेगा।",
     online: "सर्वर जुड़ा है",
+    speechUnconfigured: "सर्वर जुड़ा है; आवाज़ सेवा की कुंजी अभी जोड़नी है",
     offline: "सर्वर से जुड़ नहीं पाया",
     checking: "सर्वर जाँच रहे हैं",
     processing: "बोली बात लिख रहे हैं…",
@@ -50,6 +51,7 @@ const copy = {
     phase: "Voice check",
     phaseDetail: "Say what you need, then answer up to six farming questions. A government department or bank must make the final decision.",
     online: "Service connected",
+    speechUnconfigured: "Server connected; add the speech service key in Render",
     offline: "Service unavailable",
     checking: "Checking service",
     processing: "Transcribing your speech…",
@@ -85,6 +87,7 @@ copy.pa = {
   phase: "ਆਵਾਜ਼ ਦੀ ਜਾਂਚ",
   phaseDetail: "ਆਪਣੀ ਲੋੜ ਦੱਸੋ ਅਤੇ ਖੇਤੀ ਬਾਰੇ ਛੇ ਤੱਕ ਸਵਾਲਾਂ ਦੇ ਜਵਾਬ ਦਿਓ। ਅੰਤਿਮ ਪੁਸ਼ਟੀ ਸਰਕਾਰੀ ਵਿਭਾਗ ਜਾਂ ਬੈਂਕ ਕਰੇਗਾ।",
   online: "ਸਰਵਰ ਜੁੜਿਆ ਹੈ",
+  speechUnconfigured: "ਸਰਵਰ ਜੁੜਿਆ ਹੈ; Render ਵਿੱਚ ਆਵਾਜ਼ ਸੇਵਾ ਦੀ ਕੁੰਜੀ ਜੋੜੋ",
   offline: "ਸਰਵਰ ਨਾਲ ਜੁੜ ਨਹੀਂ ਸਕੇ",
   checking: "ਸਰਵਰ ਦੀ ਜਾਂਚ ਹੋ ਰਹੀ ਹੈ",
   processing: "ਤੁਹਾਡੀ ਗੱਲ ਲਿਖੀ ਜਾ ਰਹੀ ਹੈ…",
@@ -140,7 +143,11 @@ function App() {
         return response.json();
       })
       .then((health) => {
-        if (!cancelled) setServiceStatus(health.status === "ok" && health.speech_configured ? "online" : "offline");
+        if (!cancelled) {
+          setServiceStatus(
+            health.status !== "ok" ? "offline" : health.speech_configured ? "online" : "speech_unconfigured",
+          );
+        }
       })
       .catch(() => {
         if (!cancelled) setServiceStatus("offline");
@@ -164,6 +171,7 @@ function App() {
   const statusLabel = {
     checking: t.checking,
     online: t.online,
+    speech_unconfigured: t.speechUnconfigured,
     offline: t.offline,
     processing: t.processing,
   }[serviceStatus];
@@ -351,7 +359,7 @@ function App() {
               </div>
             </div>
             <div className="relative mt-4 flex items-center gap-2 px-2 text-xs font-medium text-muted" role="status" aria-live="polite">
-              <span className={`h-2 w-2 rounded-full ${serviceStatus === "online" ? "bg-[#458454]" : serviceStatus === "offline" ? "bg-[#b05b46]" : "animate-pulse bg-[#b79a4b]"}`} aria-hidden="true" />
+              <span className={`h-2 w-2 rounded-full ${serviceStatus === "online" ? "bg-[#458454]" : serviceStatus === "offline" ? "bg-[#b05b46]" : serviceStatus === "speech_unconfigured" ? "bg-[#b79a4b]" : "animate-pulse bg-[#b79a4b]"}`} aria-hidden="true" />
               {statusLabel}
             </div>
           </aside>}

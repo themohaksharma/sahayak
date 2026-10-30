@@ -67,13 +67,14 @@ Open <http://localhost:5173>. If the backend runs at a different address, update
 The Vite build uses relative asset paths for GitHub Pages project URLs. Deployment configurations are included:
 
 - `.github/workflows/deploy-pages.yml` builds and deploys the frontend on pushes to `main`.
-- `render.yaml` describes a FastAPI web service and asks for `CHARIOT_API_KEY` as a private Render environment variable.
+- `render.yaml` describes a FastAPI web service. Add `CHARIOT_API_KEY` as a private Render environment variable after the service is created; never place the key in this repository.
 
 To publish the live app:
 
-1. In Render, create a Blueprint from this repository using `render.yaml`. Enter the Chariot key when prompted and wait for `/api/health` to become healthy. The free Render plan may spin down after inactivity, so its first request can be delayed.
-2. In GitHub repository settings, add the Actions variable `VITE_API_BASE_URL` with the HTTPS URL assigned to the Render backend.
-3. In GitHub repository settings under Pages, choose **GitHub Actions** as the build and deployment source. Push to `main` or manually run the Pages workflow.
+1. Create a Blueprint from this public repository in Render using `render.yaml` and wait for the service to become live.
+2. In the Render service's **Environment** settings, add `CHARIOT_API_KEY` as a secret. Until then, API health and scheme data work, but Chariot speech endpoints remain unavailable.
+3. The GitHub Actions Pages workflow builds the frontend with `VITE_API_BASE_URL` and deploys it automatically when `main` changes. The repository variable must contain the HTTPS URL assigned to the Render backend.
+4. In GitHub repository settings under Pages, choose **GitHub Actions** as the build and deployment source. The free Render plan may spin down after inactivity, so its first request can be delayed.
 
 The backend CORS origin is set in `render.yaml` to `https://themohaksharma.github.io`. Do not use `localhost` in a public frontend build. Microphone access requires HTTPS and user permission.
 
