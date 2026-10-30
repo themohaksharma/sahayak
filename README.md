@@ -64,7 +64,18 @@ Open <http://localhost:5173>. If the backend runs at a different address, update
 
 ## Deployment
 
-The Vite build uses relative asset paths for GitHub Pages project URLs. The FastAPI backend must be hosted separately over HTTPS for speech and eligibility to work publicly. Set `VITE_API_BASE_URL` to the deployed backend URL when building the frontend, and set `SAHAYAK_ALLOWED_ORIGINS` on the backend to the frontend's exact HTTPS origin. Do not use `localhost` in a public frontend build. Microphone access requires HTTPS and user permission.
+The Vite build uses relative asset paths for GitHub Pages project URLs. Deployment configurations are included:
+
+- `.github/workflows/deploy-pages.yml` builds and deploys the frontend on pushes to `main`.
+- `render.yaml` describes a FastAPI web service and asks for `CHARIOT_API_KEY` as a private Render environment variable.
+
+To publish the live app:
+
+1. In Render, create a Blueprint from this repository using `render.yaml`. Enter the Chariot key when prompted and wait for `/api/health` to become healthy. The free Render plan may spin down after inactivity, so its first request can be delayed.
+2. In GitHub repository settings, add the Actions variable `VITE_API_BASE_URL` with the HTTPS URL assigned to the Render backend.
+3. In GitHub repository settings under Pages, choose **GitHub Actions** as the build and deployment source. Push to `main` or manually run the Pages workflow.
+
+The backend CORS origin is set in `render.yaml` to `https://themohaksharma.github.io`. Do not use `localhost` in a public frontend build. Microphone access requires HTTPS and user permission.
 
 ## Privacy and limitations
 
