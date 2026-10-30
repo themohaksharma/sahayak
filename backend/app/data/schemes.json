@@ -1,0 +1,132 @@
+{
+  "schemes": [
+    {
+      "id": "pm_kisan",
+      "name": {
+        "hi": "प्रधानमंत्री किसान सम्मान निधि (PM-KISAN)",
+        "en": "Pradhan Mantri Kisan Samman Nidhi (PM-KISAN)"
+      },
+      "overview": {
+        "hi": "भूमि-धारक किसान परिवारों के लिए केंद्र सरकार की सहायता योजना। योजना में परिवार का अर्थ पति, पत्नी और नाबालिग बच्चे हैं। पात्र परिवारों की पहचान राज्य या केंद्र शासित प्रदेश करता है।",
+        "en": "A central support scheme for eligible landholding farmer families. The scheme defines a family as husband, wife and minor children. States and Union Territories identify eligible families."
+      },
+      "benefit_summary": {
+        "hi": "लाभ की मौजूदा राशि और किस्त की स्थिति आधिकारिक पोर्टल पर जाँचें।",
+        "en": "Check the official portal for the current benefit amount and installment status."
+      },
+      "required_documents": [
+        {
+          "hi": "परिवार की खेती की जमीन का राज्य रिकॉर्ड।",
+          "en": "State land records for the family's farm land."
+        },
+        {
+          "hi": "राज्य द्वारा बताए गए बाकी कागज़ आधिकारिक प्रक्रिया में ही जाँचें। Sahayak पर पहचान या बैंक जानकारी न दें।",
+          "en": "Check any other documents required by the state only through its official process. Do not share identity or bank details with Sahayak."
+        }
+      ],
+      "verification_status": "official_source_reviewed_case_verification_required",
+      "eligibility_summary": {
+        "hi": "भूमि-धारक किसान परिवार होना और योजना की अपवर्जन शर्तों में न आना ज़रूरी है। राज्य सरकार की पुष्टि बाकी रहती है।",
+        "en": "The household must be an eligible landholding farmer family and must not fall under the scheme's exclusion categories. State verification is still required."
+      },
+      "official_sources": [
+        {
+          "label": {
+            "hi": "PM-KISAN का सरकारी पोर्टल",
+            "en": "Official PM-KISAN portal"
+          },
+          "url": "https://www.pmkisan.gov.in/",
+          "checked_at": "2026-10-30"
+        }
+      ]
+    },
+    {
+      "id": "kisan_credit_card",
+      "name": {
+        "hi": "किसान क्रेडिट कार्ड (KCC)",
+        "en": "Kisan Credit Card (KCC)"
+      },
+      "overview": {
+        "hi": "खेती और कृषि से जुड़ी ज़रूरतों के लिए बैंक से समय पर ऋण सहायता पाने की योजना।",
+        "en": "A scheme for timely bank credit for cultivation and related agricultural needs."
+      },
+      "benefit_summary": {
+        "hi": "ऋण सीमा फसल, खेती के क्षेत्र और बैंक के आकलन पर निर्भर करती है। मंज़ूरी बैंक करता है।",
+        "en": "The credit limit depends on the crop, cultivated area and the bank's assessment. The bank makes the lending decision."
+      },
+      "required_documents": [
+        {
+          "hi": "आवेदन पत्र, खेती/भूमि का प्रमाण और उगाई जाने वाली फसलों की जानकारी बैंक माँग सकता है।",
+          "en": "The bank may ask for an application, proof of cultivation or landholding, and the crop pattern."
+        },
+        {
+          "hi": "फोटो, पहचान या पते के कागज़ और अन्य दस्तावेज़ बैंक की प्रक्रिया के अनुसार हो सकते हैं। इन्हें Sahayak पर न दें।",
+          "en": "Photos, identity or address documents and other papers may depend on the bank's process. Do not provide them to Sahayak."
+        }
+      ],
+      "verification_status": "official_scheme_portal_reviewed_bank_assessment_required",
+      "eligibility_summary": {
+        "hi": "व्यक्तिगत/संयुक्त खेत-मालिक किसान, किरायेदार किसान, मौखिक पट्टेदार, बटाईदार, तथा किसानों के SHG/JLG आवेदन कर सकते हैं। बैंक की जाँच बाकी रहती है।",
+        "en": "Individual or joint owner-cultivators, tenant farmers, oral lessees, sharecroppers, and farmer SHGs/JLGs may apply. Bank assessment is still required."
+      },
+      "official_sources": [
+        {
+          "label": {
+            "hi": "भारत सरकार का myScheme KCC पृष्ठ",
+            "en": "Government of India myScheme KCC page"
+          },
+          "url": "https://www.myscheme.gov.in/schemes/kcc",
+          "checked_at": "2026-10-30"
+        }
+      ]
+    },
+    {
+      "id": "pmfby",
+      "name": {
+        "hi": "प्रधानमंत्री फसल बीमा योजना (PMFBY)",
+        "en": "Pradhan Mantri Fasal Bima Yojana (PMFBY)"
+      },
+      "overview": {
+        "hi": "अधिसूचित फसल और क्षेत्र में खेती करने वाले किसान फसल नुकसान के जोखिम के लिए बीमा कवरेज ले सकते हैं।",
+        "en": "Farmers growing notified crops in notified areas may obtain insurance cover against crop-loss risks."
+      },
+      "benefit_summary": {
+        "hi": "कवरेज और किसान का हिस्सा फसल, क्षेत्र, मौसम और सरकारी अधिसूचना पर निर्भर करते हैं।",
+        "en": "Coverage and the farmer's share depend on the crop, area, season and government notification."
+      },
+      "required_documents": [
+        {
+          "hi": "खेती में बीमा योग्य हित का प्रमाण और फसल/बुवाई की जानकारी माँगी जा सकती है। किरायेदार या बटाईदार किसान के लिए राज्य द्वारा मान्य प्रमाण जाँचें।",
+          "en": "Proof of insurable interest and crop or sowing details may be required. Tenant and sharecropper farmers should check which evidence their state accepts."
+        },
+        {
+          "hi": "आधिकारिक नामांकन पहचान संबंधी जानकारी माँग सकता है। यह Sahayak पर साझा न करें; मौजूदा नियम आधिकारिक पोर्टल पर जाँचें।",
+          "en": "Official enrollment may request identity information. Do not share it with Sahayak; check current requirements on the official portal."
+        }
+      ],
+      "verification_status": "official_guidelines_reviewed_current_state_and_season_notification_required",
+      "eligibility_summary": {
+        "hi": "मालिक किसान, किरायेदार और बटाईदार किसान तभी पात्र हो सकते हैं जब फसल और क्षेत्र उस मौसम में अधिसूचित हों और खेती में बीमा योग्य हित हो।",
+        "en": "Owner, tenant and sharecropper farmers may qualify when their crop and area are notified for that season and they have an insurable interest."
+      },
+      "official_sources": [
+        {
+          "label": {
+            "hi": "PMFBY का सरकारी पोर्टल और FAQ",
+            "en": "Official PMFBY portal and FAQ"
+          },
+          "url": "https://pmfby.gov.in/faq",
+          "checked_at": "2026-10-30"
+        },
+        {
+          "label": {
+            "hi": "PMFBY संचालन दिशानिर्देश (राज्य अधिसूचना लागू होगी)",
+            "en": "PMFBY operational guidelines (state notification applies)"
+          },
+          "url": "https://pmfby.gov.in/pdf/Revamped%20Operational%20Guidelines_17th%20August%202020.pdf",
+          "checked_at": "2026-10-30"
+        }
+      ]
+    }
+  ]
+}

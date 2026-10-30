@@ -1,0 +1,145 @@
+@import "tailwindcss";
+
+:root {
+  font-family: "Noto Sans Devanagari", "Nirmala UI", "Mangal", system-ui, sans-serif;
+  color: #20251f;
+  background: #dce8cd;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --color-forest: #285b3d;
+  --color-forest-dark: #1f4b31;
+  --color-ink: #25301f;
+  --color-muted: #64695f;
+  --color-line: #e5e2d8;
+  --font-display: "Noto Sans Devanagari", "Nirmala UI", system-ui, sans-serif;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  min-height: 100dvh;
+  margin: 0;
+}
+
+.app-shell {
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding-top: max(0.75rem, env(safe-area-inset-top));
+  padding-right: max(0.75rem, env(safe-area-inset-right));
+  padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+  padding-left: max(0.75rem, env(safe-area-inset-left));
+}
+
+.app-frame {
+  min-height: calc(100vh - max(0.75rem, env(safe-area-inset-top)) - max(0.75rem, env(safe-area-inset-bottom)));
+  min-height: calc(100dvh - max(0.75rem, env(safe-area-inset-top)) - max(0.75rem, env(safe-area-inset-bottom)));
+}
+
+@supports (min-height: 100svh) {
+  .app-frame {
+    min-height: calc(100svh - max(0.75rem, env(safe-area-inset-top)) - max(0.75rem, env(safe-area-inset-bottom)));
+    min-height: calc(100dvh - max(0.75rem, env(safe-area-inset-top)) - max(0.75rem, env(safe-area-inset-bottom)));
+  }
+}
+
+::selection {
+  color: #1f351e;
+  background: #e5ef8a;
+}
+
+@media (max-width: 640px) {
+  body {
+    min-width: 320px;
+  }
+
+  .app-frame {
+    border-radius: 1.25rem;
+  }
+
+  a,
+  button,
+  select {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+button,
+select {
+  font: inherit;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.text-forest {
+  color: var(--color-forest);
+}
+
+.bg-forest {
+  background-color: var(--color-forest);
+}
+
+.bg-forest-dark {
+  background-color: var(--color-forest-dark);
+}
+
+.text-ink {
+  color: var(--color-ink);
+}
+
+.text-muted {
+  color: var(--color-muted);
+}
+
+.border-line {
+  border-color: var(--color-line);
+}
+
+.outline-forest {
+  outline-color: var(--color-forest);
+}
+
+.brand-mark {
+  position: relative;
+  display: grid;
+  width: 2.6rem;
+  height: 2.6rem;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 0.95rem;
+  background: var(--color-forest);
+}
+
+.brand-mark::before,
+.brand-mark::after,
+.brand-mark span {
+  position: absolute;
+  display: block;
+  border: 1.6px solid #f7f5ee;
+  border-radius: 999px;
+  content: "";
+}
+
+.brand-mark::before {
+  width: 1.45rem;
+  height: 1.45rem;
+  transform: translateY(0.29rem);
+}
+
+.brand-mark::after {
+  width: 1.45rem;
+  height: 1.45rem;
+  transform: translateY(-0.29rem);
+}
+
+.brand-mark span {
+  z-index: 1;
+  width: 0.38rem;
+  height: 0.38rem;
+  border: 0;
+  background: #f3c971;
+}
